@@ -1,0 +1,17 @@
+﻿.container{
+    display:grid;
+    grid-template-rows:repeat(11,1fr);
+    grid-template-columns:repeat(11,1fr);
+    height:100%;
+    width:100%;
+}
+.logo{
+    grid-column:span 11;
+    grid-row:span 11;
+}
+.logo img{
+    display:flex;
+    align-content:center;
+    margin-right:auto;
+    margin-left:auto;
+}
