@@ -8,3 +8,14 @@
     y.style.display = "flex";
     z.style.display = "none";
 }
+var player;
+function onePlayer() {
+    var x = document.getElementById("twoPlayer");
+    var y = document.getElementById("onePlayer");
+    player = 1;
+}
+function twoPlayer() {
+    var x = document.getElementById("twoPlayer");
+    var y = document.getElementById("onePlayer");
+    player = 2;
+}
