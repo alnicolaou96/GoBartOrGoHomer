@@ -5,6 +5,7 @@
     height:100%;
     width:100%;
 }
+/*Start Page Styling*/
 .logo{
     grid-column:span 11;
     grid-row:span 11;
@@ -14,4 +15,27 @@
     align-content:center;
     margin-right:auto;
     margin-left:auto;
+}
+
+/*player select styling*/
+.onePlayer{
+    display:none;
+    grid-column:span 5;
+    grid-row:2 /span 9;
+    height: 75vh;
+}
+.twoPlayer{
+    display:none;
+    grid-column:7/ span 5;
+    grid-row:2/ span 9;
+    height:75vh
+}
+
+.onePlayer button{
+    height:100%;
+    width:100%;
+}
+.twoPlayer button {
+    height: 100%;
+    width: 100%;
 }
