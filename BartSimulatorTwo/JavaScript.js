@@ -1,4 +1,5 @@
-﻿function StartGame() {
+﻿//---------Game Start screen to Player Select screen
+function StartGame() {
     console.log("bjsvojdb");
     var x = document.getElementById("onePlayer");
     var y = document.getElementById("twoPlayer");
@@ -8,6 +9,11 @@
     y.style.display = "flex";
     z.style.display = "none";
 }
+
+
+//---------Player Select screen to Character Select screen
+//---------Player Selection
+
 var player;
 function onePlayer() {
     var w = document.getElementById("twoPlayer");
@@ -38,4 +44,23 @@ function twoPlayer() {
 
     y.style.display = "flex";
     z.style.display = "flex";
+}
+
+
+//---------Character Select screen to Question 1 Screen
+//---------Character Selection
+
+var character;
+
+function Chad() {
+    character = 1;
+    console.log("works");
+
+
+}
+function Stacy() {
+    character = 2;
+    console.log("works");
+
+
 }

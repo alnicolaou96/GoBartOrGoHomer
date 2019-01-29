@@ -4,6 +4,8 @@
     grid-template-columns:repeat(11,1fr);
     height:100%;
     width:100%;
+    height:100vh;
+    width:100vw;
 }
 /*Start Page Styling*/
 .logo{
@@ -40,9 +42,33 @@
     width: 100%;
 }
 
-.chad{
-    display:none;
+
+/*Character styling*/
+
+.chad {
+    display: none;
+    grid-column: span 5;
+    grid-row: 2 /span 9;
+    height: 75vh;
 }
-.stacy{
+.stacy {
+    display: none;
+    grid-column: 7/ span 5;
+    grid-row: 2/ span 9;
+    height: 75vh
+}
+
+.chad button {
+    height: 100%;
+    width: 100%;
+}
+.stacy button {
+    height: 100%;
+    width: 100%;
+}
+
+/*Question One*/
+
+.intro{
     display:none;
 }
