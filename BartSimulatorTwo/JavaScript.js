@@ -54,13 +54,28 @@ var character;
 
 function Chad() {
     character = 1;
-    console.log("works");
 
+
+    if (confirm(player + "player mode with Chad") === true) { //asks the user if they picked these options
+        alert("works");
+    }
+    else {
+        location.reload(); //restarts the program
+    }
 
 }
 function Stacy() {
     character = 2;
-    console.log("works");
 
 
+    if (confirm(player + "player mode with Stacy") === true) { //asks the user if they picked these options
+        alert("works");
+
+        var x = document.getElementById("stacy");
+        var y = document.getElementById("chad");
+        var z = document.getElementById("firstQuestion");
+    }
+    else {
+        location.reload(); //restarts the program
+    }
 }
