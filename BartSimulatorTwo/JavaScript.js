@@ -13,16 +13,14 @@ function StartGame() {
 
 //---------Player Select screen to Character Select screen
 //---------Player Selection
-
-var player;
-function onePlayer() {
+function TransitionPlaySel() {
     var w = document.getElementById("twoPlayer");
     var x = document.getElementById("onePlayer");
 
     var y = document.getElementById("chad");
     var z = document.getElementById("stacy");
 
-    player = 1;
+
 
     w.style.display = "none";
     x.style.display = "none";
@@ -30,25 +28,29 @@ function onePlayer() {
     y.style.display = "flex";
     z.style.display = "flex";
 }
+
+var player;
+function onePlayer() {
+    player = 1;
+    TransitionPlaySel()
+}
 function twoPlayer() {
-    var w = document.getElementById("twoPlayer");
-    var x = document.getElementById("onePlayer");
-
-    var y = document.getElementById("chad");
-    var z = document.getElementById("stacy");
-
     player = 2;
-
-    w.style.display = "none";
-    x.style.display = "none";
-
-    y.style.display = "flex";
-    z.style.display = "flex";
+    TransitionPlaySel()
 }
 
 
 //---------Character Select screen to Question 1 Screen
 //---------Character Selection
+function TransitionChar() {
+    var x = document.getElementById("stacy");
+    var y = document.getElementById("chad");
+    var z = document.getElementById("firstQuestion");
+
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "flex";
+}
 
 var character;
 
@@ -56,8 +58,10 @@ function Chad() {
     character = 1;
 
 
-    if (confirm(player + "player mode with Chad") === true) { //asks the user if they picked these options
-        alert("works");
+    if (confirm(player + " player mode with Chad") === true) { //asks the user if they picked these options
+
+        TransitionChar();
+
     }
     else {
         location.reload(); //restarts the program
@@ -68,14 +72,13 @@ function Stacy() {
     character = 2;
 
 
-    if (confirm(player + "player mode with Stacy") === true) { //asks the user if they picked these options
-        alert("works");
+    if (confirm(player + " player mode with Stacy") === true) { //asks the user if they picked these options
 
-        var x = document.getElementById("stacy");
-        var y = document.getElementById("chad");
-        var z = document.getElementById("firstQuestion");
+        TransitionChar();
+
     }
     else {
         location.reload(); //restarts the program
     }
 }
+
