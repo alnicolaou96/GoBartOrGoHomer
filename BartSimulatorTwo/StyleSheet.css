@@ -1,4 +1,7 @@
-﻿.container{
+﻿body{
+    margin:0px 0px 0px 0px;
+}
+.container{
     display:grid;
     grid-template-rows:repeat(11,1fr);
     grid-template-columns:repeat(11,1fr);
@@ -7,6 +10,7 @@
     height:100vh;
     width:100vw;
     grid-row-gap:3px;
+    margin:0px 0px 0px 0px;
 }
 /*Start Page Styling*/
 .logo{
@@ -72,21 +76,32 @@
 
 .intro{
     display:none;
+    text-align:center;
 }
 .dialogBoxes{
     grid-column:2/span 9;
     grid-row:10/span 2;
     background-color:rgba(0, 0, 0, 0.80);
     border-radius:10px;
+    justify-content:space-around;
+    color:white;
+    padding-top:2em;
+
 }
 .textBox{
     grid-column:2/span 9;
     grid-row:7/ span 3;
     background-color:rgba(255, 172, 243, 0.85);
     border-radius:10px;
+    justify-content:center;
+    padding-top:2em;
 }
 .charPic{
     grid-column:1/ span 11;
     grid-row:1/ span 11;
     background-color:aquamarine;
+    justify-content:center;
+}
+.pic img{
+    height:100vh;
 }
