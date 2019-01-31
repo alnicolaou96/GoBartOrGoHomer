@@ -68,7 +68,7 @@ function TextChange(textBox,one,two,three,four) {
     x.innerHTML = three;
     y.innerHTML = four;
     z.innerHTML = textBox;
-}
+} //this function changes the dialog boxes and text box
 
 var character;
 
@@ -79,7 +79,7 @@ function Chad() {
     if (confirm(player + " player mode with Chad") === true) { //asks the user if they picked these options
 
         TransitionChar();
-        TextChange("this works", "1", "2", "3", "4");
+        TextChange("*you see a cute house*", "click here", "click here", "click here", "click here");
 
     }
     else {
@@ -94,7 +94,7 @@ function Stacy() {
     if (confirm(player + " player mode with Stacy") === true) { //asks the user if they picked these options
 
         TransitionChar();
-        TextChange("this works", "1", "2", "3", "4");
+        TextChange("*you see a cute house*", "click here", "click here", "click here", "click here");
 
     }
     else {

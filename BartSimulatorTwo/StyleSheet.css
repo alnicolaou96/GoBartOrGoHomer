@@ -95,15 +95,15 @@
     display:none;
     text-align:center;
 }
-.dialogBoxes{
-    grid-column:2/span 9;
-    grid-row:10/span 2;
-    background-color:rgba(0, 0, 0, 0.80);
-    border-radius:10px;
-    justify-content:space-around;
-    color:white;
-    padding-top:2em;
-
+.dialogBoxes {
+    grid-column: 2/span 9;
+    grid-row: 10/span 2;
+    background-color: rgba(0, 0, 0, 0.80);
+    border-radius: 10px;
+    justify-content: space-around;
+    color: white;
+    padding-top: 2em;
+    border: 2px solid white;
 }
 .textBox{
     grid-column:2/span 9;
@@ -112,6 +112,7 @@
     border-radius:10px;
     justify-content:center;
     padding-top:2em;
+    border:2px solid white;
 }
 .charPic{
     grid-column:1/ span 11;
