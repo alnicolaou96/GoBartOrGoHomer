@@ -45,11 +45,15 @@ function twoPlayer() {
 function TransitionChar() {
     var x = document.getElementById("stacy");
     var y = document.getElementById("chad");
-    var z = document.getElementById("firstQuestion");
+    var z = document.getElementById("charPic");
+    var w = document.getElementById("textBox");
+    var v = document.getElementById("dialogBoxes");
 
     x.style.display = "none";
     y.style.display = "none";
     z.style.display = "flex";
+    w.style.display = "flex";
+    v.style.display = "flex";
 }
 
 var character;
