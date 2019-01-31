@@ -12,6 +12,7 @@
     grid-row-gap:3px;
     margin:0px 0px 0px 0px;
 
+    /*----------------animated background----------------*/
     background: repeating-linear-gradient(
     45deg,
     aquamarine,

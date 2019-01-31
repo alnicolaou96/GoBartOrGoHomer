@@ -32,16 +32,17 @@ function TransitionPlaySel() {
 var player;
 function onePlayer() {
     player = 1;
-    TransitionPlaySel()
+    TransitionPlaySel();
 }
 function twoPlayer() {
     player = 2;
-    TransitionPlaySel()
+    TransitionPlaySel();
 }
 
 
 //---------Character Select screen to Question 1 Screen
 //---------Character Selection
+var textBox, one, two, three, four;
 function TransitionChar() {
     var x = document.getElementById("stacy");
     var y = document.getElementById("chad");
@@ -55,6 +56,19 @@ function TransitionChar() {
     w.style.display = "flex";
     v.style.display = "flex";
 }
+function TextChange(textBox,one,two,three,four) {
+    var v = document.getElementById("one");
+    var w = document.getElementById("two");
+    var x = document.getElementById("three");
+    var y = document.getElementById("four");
+    var z = document.getElementById("textBox");
+
+    v.innerHTML = one;
+    w.innerHTML = two;
+    x.innerHTML = three;
+    y.innerHTML = four;
+    z.innerHTML = textBox;
+}
 
 var character;
 
@@ -65,6 +79,7 @@ function Chad() {
     if (confirm(player + " player mode with Chad") === true) { //asks the user if they picked these options
 
         TransitionChar();
+        TextChange("this works", "1", "2", "3", "4");
 
     }
     else {
@@ -79,6 +94,7 @@ function Stacy() {
     if (confirm(player + " player mode with Stacy") === true) { //asks the user if they picked these options
 
         TransitionChar();
+        TextChange("this works", "1", "2", "3", "4");
 
     }
     else {
