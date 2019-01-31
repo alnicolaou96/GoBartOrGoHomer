@@ -11,6 +11,22 @@
     width:100vw;
     grid-row-gap:3px;
     margin:0px 0px 0px 0px;
+
+    background: repeating-linear-gradient(
+    45deg,
+    aquamarine,
+    aquamarine 100px,
+    rgb(0, 255, 227) 100px,
+    rgb(0, 255, 227) 200px
+  );
+    background-size: 200% 200%;
+    animation: barberpole 10s linear infinite;
+}
+
+@keyframes barberpole {
+    100% {
+        background-position: 100% 100%;
+    }
 }
 /*Start Page Styling*/
 .logo{
@@ -99,7 +115,6 @@
 .charPic{
     grid-column:1/ span 11;
     grid-row:1/ span 11;
-    background-color:aquamarine;
     justify-content:center;
 }
 .pic img{
