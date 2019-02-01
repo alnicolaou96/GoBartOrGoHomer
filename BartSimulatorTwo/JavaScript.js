@@ -95,10 +95,45 @@ function Stacy() {
 
         TransitionChar();
         TextChange("*you see a cute house*", "click here", "click here", "click here", "click here");
-
+        document.getElementById("characterPicture").src = "SchoolGirl_Default.png";
     }
     else {
         location.reload(); //restarts the program
     }
 }
 
+
+//---------Next Question
+var question;
+function NextQuestion(question) {
+    switch (question) {
+        case 1:
+            console.log("1 works");
+            PlayerSwitch();
+            break;
+        case 2:
+            console.log("2 works");
+            PlayerSwitch();
+            break;
+        case 3:
+            console.log("3 works");
+            PlayerSwitch();
+            break;
+        case 4:
+            console.log("4 works");
+            PlayerSwitch();
+            break;
+    }
+
+}
+
+//---------Player switch
+var playerTurn=1;
+function PlayerSwitch() {
+    playerTurn++;
+    if (playerTurn % 2 === 0) {
+        console.log("player 2's turn");
+    }
+    else
+        console.log("player 1's turn");
+}
