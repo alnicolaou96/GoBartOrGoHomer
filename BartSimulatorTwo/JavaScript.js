@@ -1,4 +1,5 @@
-﻿//---------Game Start screen to Player Select screen
+﻿
+//---------Game Start screen to Player Select screen
 function StartGame() {
     console.log("bjsvojdb");
     var x = document.getElementById("onePlayer");
@@ -96,6 +97,8 @@ function Stacy() {
         TransitionChar();
         TextChange("*you see a cute house*", "click here", "click here", "click here", "click here");
         document.getElementById("characterPicture").src = "SchoolGirl_Default.png";
+
+        document.getElementById("audio").src = "hotel1.ogg";
     }
     else {
         location.reload(); //restarts the program
