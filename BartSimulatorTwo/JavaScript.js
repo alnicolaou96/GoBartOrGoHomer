@@ -81,6 +81,7 @@ function Chad() {
 
         TransitionChar();
         TextChange("*you see a cute house*", "click here", "click here", "click here", "click here");
+        document.getElementById("audio").src = "hotel1.ogg";
 
     }
     else {
@@ -135,8 +136,12 @@ var playerTurn=1;
 function PlayerSwitch() {
     playerTurn++;
     if (playerTurn % 2 === 0) {
-        console.log("player 2's turn");
+        alert("player 2's turn");
     }
     else
-        console.log("player 1's turn");
+        alert("player 1's turn");
 }
+
+//---------Points 
+var oneScore;
+var twoScore;

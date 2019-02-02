@@ -55,13 +55,19 @@
     height:75vh
 }
 
-.onePlayer button{
-    height:100%;
-    width:100%;
+.onePlayer button {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(255, 172, 243, 0.85);
+    border: 10px solid white;
 }
 .twoPlayer button {
     height: 100%;
     width: 100%;
+    border-radius:10px;
+    background-color: rgba(255, 172, 243, 0.85);
+    border: 10px solid white;
 }
 
 
@@ -80,13 +86,28 @@
     height: 75vh
 }
 
-.chad button {
+.chad div {
     height: 100%;
     width: 100%;
+    background-image:url('BuffHouse_Detailed.png');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:60%;
+    border-radius:5px;
+    background-color:rgba(255, 172, 243, 0.85);
+    border:10px solid white;
+
 }
-.stacy button {
+.stacy div {
     height: 100%;
     width: 100%;
+    background-image: url('SchoolGirl_Detailed.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    border-radius: 5px;
+    background-color: rgba(255, 172, 243, 0.85);
+    border: 10px solid white;
 }
 
 /*Question One*/
