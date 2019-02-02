@@ -114,34 +114,58 @@ function NextQuestion(question) {
         case 1:
             console.log("1 works");
             PlayerSwitch();
+            ChangingDialog();
             break;
         case 2:
             console.log("2 works");
             PlayerSwitch();
+            ChangingDialog();
             break;
         case 3:
             console.log("3 works");
             PlayerSwitch();
+            ChangingDialog();
             break;
         case 4:
             console.log("4 works");
             PlayerSwitch();
+            ChangingDialog();
             break;
     }
 
 }
 
-//---------Player switch
-var playerTurn=1;
+//---------Player switch and dialog counter
+var playerTurn = 1;
+var nextDialog = 0;
 function PlayerSwitch() {
     playerTurn++;
     if (playerTurn % 2 === 0) {
         alert("player 2's turn");
     }
-    else
+    else {
         alert("player 1's turn");
+        nextDialog++;
+        console.log(nextDialog);
+    }
+        
 }
 
 //---------Points 
 var oneScore;
 var twoScore;
+
+//---------Next Dialog
+function ChangingDialog() {
+    switch (nextDialog) {
+        case 1:
+            TextChange("testing", "a", "b", "c", "d");
+            console.log("working");
+            break;
+        case 2:
+            TextChange("testing 2", "e", "f", "g", "h");
+            console.log("working");
+            break;
+    }
+}
+
