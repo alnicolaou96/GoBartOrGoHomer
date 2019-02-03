@@ -43,7 +43,7 @@ function twoPlayer() {
 
 //---------Character Select screen to Question 1 Screen
 //---------Character Selection
-var textBox, one, two, three, four;
+var textBox, one, two, three, four;//new dialog
 function TransitionChar() {
     var x = document.getElementById("stacy");
     var y = document.getElementById("chad");
@@ -112,22 +112,18 @@ var question;
 function NextQuestion(question) {
     switch (question) {
         case 1:
-            console.log("1 works");
             PlayerSwitch();
             ChangingDialog();
             break;
         case 2:
-            console.log("2 works");
             PlayerSwitch();
             ChangingDialog();
             break;
         case 3:
-            console.log("3 works");
             PlayerSwitch();
             ChangingDialog();
             break;
         case 4:
-            console.log("4 works");
             PlayerSwitch();
             ChangingDialog();
             break;
@@ -142,11 +138,13 @@ function PlayerSwitch() {
     playerTurn++;
     if (playerTurn % 2 === 0) {
         alert("player 2's turn");
+        player = 2;
     }
     else {
         alert("player 1's turn");
         nextDialog++;
         console.log(nextDialog);
+        player = 1;
     }
         
 }
@@ -154,17 +152,43 @@ function PlayerSwitch() {
 //---------Points 
 var oneScore;
 var twoScore;
+var points;
+var onePoints, twoPoints, threePoints, fourPoints;//gives points based around dialog option chosen
+
+function PointGiver(points) {
+    if (player === 1) {
+        oneScore += points;
+    }
+    else if (player === 2) {
+        twoScore += points;
+    }
+}
+function PointsForAnsweredQuestion(onePoints, twoPoints, threePoints, fourPoints) {
+    switch (question) {
+        case 1:
+            PointGiver(onePoints);
+            break;
+        case 2:
+            PointGiver(twoPoints);
+            break;
+        case 3:
+            PointGiver(threePoints);
+            break;
+        case 4:
+            PointGiver(fourPoints);
+            break;
+    }
+}//customizable point system for each set of dialog
 
 //---------Next Dialog
+//---------Changes the dialog and text everytime a both players go
 function ChangingDialog() {
     switch (nextDialog) {
         case 1:
             TextChange("testing", "a", "b", "c", "d");
-            console.log("working");
             break;
         case 2:
             TextChange("testing 2", "e", "f", "g", "h");
-            console.log("working");
             break;
     }
 }
