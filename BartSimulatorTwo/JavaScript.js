@@ -185,10 +185,18 @@ function PointsForAnsweredQuestion(onePoints, twoPoints, threePoints, fourPoints
 function ChangingDialog() {
     switch (nextDialog) {
         case 1:
-            TextChange("testing", "a", "b", "c", "d");
+            TextChange("Two thousand and one… two thousand and three… two thousand and-- OH! Hey, sup boys, I didn’t see you there. Just doing some stair workouts. You don’t have to be a brick house to get BUILT LIKE ONE."
+                , "We could definitely hook you up with a brick facade!"
+                , "Two thousand and three, huh? Impressive."
+                , "You’re already looking great, Colonial Chad."
+                , "Hope I’m not interrupting your groove?");
             break;
         case 2:
-            TextChange("testing 2", "e", "f", "g", "h");
+            TextChange("Anyway, how can I help you? Need someone to raise the roof? </br> *Colonial Chad says, hopping from foot to foot.*"
+                , "I see your potential. You could be someone’s dream home."
+                , "I can get you sold fast so you don’t have to worry about it."
+                , "I’m surprised you even need a realtor. Just look at those beautiful brown shingles"
+                , "I scouted you from the local listings. I want to represent you, Colonial Chad.");
             break;
     }
 }

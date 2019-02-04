@@ -44,13 +44,13 @@
 /*player select styling*/
 .onePlayer{
     display:none;
-    grid-column:span 5;
+    grid-column:2/ span 4;
     grid-row:2 /span 9;
     height: 75vh;
 }
 .twoPlayer{
     display:none;
-    grid-column:7/ span 5;
+    grid-column:7/ span 4;
     grid-row:2/ span 9;
     height:75vh
 }
@@ -75,13 +75,13 @@
 
 .chad {
     display: none;
-    grid-column: span 5;
+    grid-column: 2/span 4;
     grid-row: 2 /span 9;
     height: 75vh;
 }
 .stacy {
     display: none;
-    grid-column: 7/ span 5;
+    grid-column: 7/ span 4;
     grid-row: 2/ span 9;
     height: 75vh
 }
