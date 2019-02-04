@@ -112,20 +112,20 @@ var question;
 function NextQuestion(question) {
     switch (question) {
         case 1:
-            PlayerSwitch();
             ChangingDialog();
+            PlayerSwitch();
             break;
         case 2:
-            PlayerSwitch();
             ChangingDialog();
+            PlayerSwitch();
             break;
         case 3:
-            PlayerSwitch();
             ChangingDialog();
+            PlayerSwitch();
             break;
         case 4:
-            PlayerSwitch();
             ChangingDialog();
+            PlayerSwitch();
             break;
     }
 
@@ -137,23 +137,21 @@ var nextDialog = 0;
 function PlayerSwitch() {
     playerTurn++;
     if (playerTurn % 2 === 0) {
-        alert("player 2's turn");
         player = 2;
+        alert("player 2's turn");
     }
     else {
-        alert("player 1's turn");
         nextDialog++;
-        console.log(nextDialog);
+        alert("player 1's turn");
         player = 1;
     }
         
 }
 
 //---------Points 
-var oneScore;
-var twoScore;
+var oneScore=0;
+var twoScore=0;
 var points;
-var onePoints, twoPoints, threePoints, fourPoints;//gives points based around dialog option chosen
 
 function PointGiver(points) {
     if (player === 1) {
@@ -163,22 +161,6 @@ function PointGiver(points) {
         twoScore += points;
     }
 }
-function PointsForAnsweredQuestion(onePoints, twoPoints, threePoints, fourPoints) {
-    switch (question) {
-        case 1:
-            PointGiver(onePoints);
-            break;
-        case 2:
-            PointGiver(twoPoints);
-            break;
-        case 3:
-            PointGiver(threePoints);
-            break;
-        case 4:
-            PointGiver(fourPoints);
-            break;
-    }
-}//customizable point system for each set of dialog
 
 //---------Next Dialog
 //---------Changes the dialog and text everytime a both players go
@@ -198,6 +180,43 @@ function ChangingDialog() {
                 , "I’m surprised you even need a realtor. Just look at those beautiful brown shingles"
                 , "I scouted you from the local listings. I want to represent you, Colonial Chad.");
             break;
+    }
+}
+
+//---------Points Function
+function PointsFunction(question) {
+    switch (question) {
+        case 1:
+            DialogSelected(1, 0);
+            DialogSelected(2, 3);
+            alert("p1 Score" + "" + oneScore + "" + nextDialog);
+            alert("p2 Score" + "" + twoScore);
+            break;
+        case 2:
+            DialogSelected(1, 0);
+            DialogSelected(2, 5);
+            alert("p1 Score" + "" + oneScore + "" + nextDialog);
+            alert("p2 Score" + "" + twoScore);
+            break;
+        case 3:
+            DialogSelected(1, 0);
+            DialogSelected(2, 3);
+            alert("p1 Score" + "" + oneScore + "" + nextDialog);
+            alert("p2 Score" + "" + twoScore);
+            break;
+        case 4:
+            DialogSelected(1, 0);
+            DialogSelected(2, 8);
+            alert("p1 Score" + "" + oneScore + "" + nextDialog);
+            alert("p2 Score" + "" + twoScore);
+            break;
+
+    }
+}
+var dialogNum, givenPoints;
+function DialogSelected(dialogNum,givenPoints) {
+    if (nextDialog === dialogNum) {
+        PointGiver(givenPoints);
     }
 }
 
