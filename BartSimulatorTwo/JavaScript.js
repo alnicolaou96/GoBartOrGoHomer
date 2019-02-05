@@ -80,7 +80,7 @@ function Chad() {
     if (confirm(player + " player mode with Chad") === true) { //asks the user if they picked these options
 
         TransitionChar();
-        TextChange("*you see a cute house*", "click here", "click here", "click here", "click here");
+        TextChange("*you see a cute house*", "", "", "", "Next");
         document.getElementById("audio").src = "hotel1.ogg";
 
     }
@@ -96,7 +96,7 @@ function Stacy() {
     if (confirm(player + " player mode with Stacy") === true) { //asks the user if they picked these options
 
         TransitionChar();
-        TextChange("*you see a cute house*", "click here", "click here", "click here", "click here");
+        TextChange("*you see a cute house*", "", "", "", "Next");
         document.getElementById("characterPicture").src = "SchoolGirl_Default.png";
 
         document.getElementById("audio").src = "hotel1.ogg";
@@ -165,22 +165,42 @@ function PointGiver(points) {
 //---------Next Dialog
 //---------Changes the dialog and text everytime a both players go
 function ChangingDialog() {
-    switch (nextDialog) {
-        case 1:
-            TextChange("Two thousand and one… two thousand and three… two thousand and-- OH! Hey, sup boys, I didn’t see you there. Just doing some stair workouts. You don’t have to be a brick house to get BUILT LIKE ONE."
-                , "We could definitely hook you up with a brick facade!"
-                , "Two thousand and three, huh? Impressive."
-                , "You’re already looking great, Colonial Chad."
-                , "Hope I’m not interrupting your groove?");
-            break;
-        case 2:
-            TextChange("Anyway, how can I help you? Need someone to raise the roof? </br> *Colonial Chad says, hopping from foot to foot.*"
-                , "I see your potential. You could be someone’s dream home."
-                , "I can get you sold fast so you don’t have to worry about it."
-                , "I’m surprised you even need a realtor. Just look at those beautiful brown shingles"
-                , "I scouted you from the local listings. I want to represent you, Colonial Chad.");
-            break;
-    }
+    if (character === 1) {
+        switch (nextDialog) {
+            case 1:
+                TextChange("Two thousand and one… two thousand and three… two thousand and-- OH! Hey, sup boys, I didn’t see you there. Just doing some stair workouts. You don’t have to be a brick house to get BUILT LIKE ONE."
+                    , "We could definitely hook you up with a brick facade!"
+                    , "Two thousand and three, huh? Impressive."
+                    , "You’re already looking great, Colonial Chad."
+                    , "Hope I’m not interrupting your groove?");
+                break;
+            case 2:
+                TextChange("Anyway, how can I help you? Need someone to raise the roof? </br> *Colonial Chad says, hopping from foot to foot.*"
+                    , "I see your potential. You could be someone’s dream home."
+                    , "I can get you sold fast so you don’t have to worry about it."
+                    , "I’m surprised you even need a realtor. Just look at those beautiful brown shingles"
+                    , "I scouted you from the local listings. I want to represent you, Colonial Chad.");
+                break;
+        }
+    } //chad dialog
+    else if (character === 2) {
+        switch (nextDialog) {
+            case 1:
+                TextChange("Hey, what’s up? Is there a reason you pulled me away from my friends? I don’t think I know you... Look, I have clubs soon, so I hope this is quick. If clubs start late again, I’m never gonna hear the end of it. I’m too busy to deal with that. Do you know how many calls I--"
+                    , "I’m sure Stacy Halls can get away with being late."
+                    , "It’ll be quick!"
+                    , "If clubs start late, you can blame me."
+                    , "This is big news about your future, Stacy Halls.");
+                break;
+            case 2:
+                TextChange("*Suddenly, Stacy Halls slaps her thigh*</br> Oh, duh! This is about the whole redistricting thing, isn’t it? Let me guess, you’re offering to remodel me... Look, the superintendent told me I have nothing to worry about. As long as I have the best football field-- and I do-- they're not going to shut me down. I don’t need your help."
+                    , "No one’s worried about your football field! But your boiler room is seriously out of code. We’re just trying to get you right."
+                    , "Everyone could use some help looking their best. We just want to show you in the best light possible!"
+                    , "You say that, but we know you’ve been eyeing those new cheerleading outfits..."
+                    , "We’re not trying to fix up your school, we’re trying to optimize your curriculum.");
+                break;
+        }
+    } //stacy dialog
 }
 
 //---------Points Function
