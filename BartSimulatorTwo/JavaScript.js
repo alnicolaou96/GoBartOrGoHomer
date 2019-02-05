@@ -245,3 +245,8 @@ function DialogSelected(dialogNum,givenPoints) {
     }
 }
 
+//---------Responses
+function Response() {
+
+}
+
