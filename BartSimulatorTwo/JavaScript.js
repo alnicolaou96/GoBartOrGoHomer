@@ -133,16 +133,16 @@ function NextQuestion(question) {
 
 //---------Player switch and dialog counter
 var playerTurn = 1;
-var nextDialog = 0;
+var nextDialog = 1;
 function PlayerSwitch() {
     playerTurn++;
     if (playerTurn % 2 === 0) {
         player = 2;
-        alert("player 2's turn");
+        alert("player 1's turn");
     }
     else {
         nextDialog++;
-        alert("player 1's turn");
+        alert("player 2's turn");
         player = 1;
     }
         
@@ -188,31 +188,36 @@ function PointsFunction(question) {
     switch (question) {
         case 1:
             DialogSelected(1, 0);
-            DialogSelected(2, 3);
-            alert("p1 Score" + "" + oneScore + "" + nextDialog);
-            alert("p2 Score" + "" + twoScore);
+            DialogSelected(2, 1); //points for question 1
+            DialogSelected(3, 2); //question 2
+            DialogSelected(4, 3); // question 3 et cetera
+
+
             break;
         case 2:
             DialogSelected(1, 0);
             DialogSelected(2, 5);
-            alert("p1 Score" + "" + oneScore + "" + nextDialog);
-            alert("p2 Score" + "" + twoScore);
+            DialogSelected(3, 8);
+            DialogSelected(4, 8);
+
             break;
         case 3:
             DialogSelected(1, 0);
             DialogSelected(2, 3);
-            alert("p1 Score" + "" + oneScore + "" + nextDialog);
-            alert("p2 Score" + "" + twoScore);
+            DialogSelected(3, 8);
+            DialogSelected(4, 8);
+
             break;
         case 4:
             DialogSelected(1, 0);
             DialogSelected(2, 8);
-            alert("p1 Score" + "" + oneScore + "" + nextDialog);
-            alert("p2 Score" + "" + twoScore);
+            DialogSelected(2, 8);
+            DialogSelected(4, 8);
+
             break;
 
     }
-}
+} //assigning points to questions
 var dialogNum, givenPoints;
 function DialogSelected(dialogNum,givenPoints) {
     if (nextDialog === dialogNum) {
