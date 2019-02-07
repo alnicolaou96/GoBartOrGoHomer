@@ -1,12 +1,9 @@
 ﻿
 //---------Game Start screen to Player Select screen
 function StartGame() {
-    console.log("bjsvojdb");
-    var x = document.getElementById("onePlayer");
-    var y = document.getElementById("twoPlayer");
+    var y = document.getElementById("rules");
     var z = document.getElementById("logo");
 
-    x.style.display = "flex";
     y.style.display = "flex";
     z.style.display = "none";
 }
@@ -14,9 +11,9 @@ function StartGame() {
 
 //---------Player Select screen to Character Select screen
 //---------Player Selection
-function TransitionPlaySel() {
-    var w = document.getElementById("twoPlayer");
-    var x = document.getElementById("onePlayer");
+
+function Rules() {
+    var w = document.getElementById("rules");
 
     var y = document.getElementById("chad");
     var z = document.getElementById("stacy");
@@ -24,20 +21,9 @@ function TransitionPlaySel() {
 
 
     w.style.display = "none";
-    x.style.display = "none";
 
     y.style.display = "flex";
     z.style.display = "flex";
-}
-
-var player;
-function onePlayer() {
-    player = 1;
-    TransitionPlaySel();
-}
-function twoPlayer() {
-    player = 2;
-    TransitionPlaySel();
 }
 
 
@@ -77,7 +63,7 @@ function Chad() {
     character = 1;
 
 
-    if (confirm(player + " player mode with Chad") === true) { //asks the user if they picked these options
+    if (confirm("Are you sure you want to romance Colonial Chad???") === true) { //asks the user if they picked these options
 
         TransitionChar();
         TextChange("*you see a cute house*", "", "", "", "Next");
@@ -93,7 +79,7 @@ function Stacy() {
     character = 2;
 
 
-    if (confirm(player + " player mode with Stacy") === true) { //asks the user if they picked these options
+    if (confirm("Are you sure you want to romance Stacy Halls???") === true) { //asks the user if they picked these options
 
         TransitionChar();
         TextChange("*you see a cute house*", "", "", "", "Next");
