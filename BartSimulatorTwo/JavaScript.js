@@ -99,18 +99,22 @@ function NextQuestion(question) {
     switch (question) {
         case 1:
             ChangingDialog();
+            Response("test1");
             PlayerSwitch();
             break;
         case 2:
             ChangingDialog();
+            Response("test2");
             PlayerSwitch();
             break;
         case 3:
             ChangingDialog();
+            Response("test3");
             PlayerSwitch();
             break;
         case 4:
             ChangingDialog();
+            Response("test4");
             PlayerSwitch();
             break;
     }
@@ -118,6 +122,7 @@ function NextQuestion(question) {
 }
 
 //---------Player switch and dialog counter
+var player;
 var playerTurn = 1;
 var nextDialog = 1;
 function PlayerSwitch() {
@@ -232,7 +237,9 @@ function DialogSelected(dialogNum,givenPoints) {
 }
 
 //---------Responses
-function Response() {
-
+var response;
+function Response(response) {
+            TextChange(response, "", "", "", "Next");
+ 
 }
 
