@@ -195,6 +195,7 @@ var selection = 0;
 function PointsFunction(question) {
     switch (question) {
         case 1:
+            selection = 1;
             DialogSelected(1, 0);
             DialogSelected(2, 1); //points for question 1
             DialogSelected(3, 2); //question 2
@@ -203,13 +204,14 @@ function PointsFunction(question) {
 
             break;
         case 2:
+            selection = 2;
             DialogSelected(1, 0);
             DialogSelected(2, 5);
             DialogSelected(3, 8);
             DialogSelected(4, 8);
 
             break;
-        case 3:
+        case 3: selection = 3;
             DialogSelected(1, 0);
             DialogSelected(2, 3);
             DialogSelected(3, 8);
@@ -217,6 +219,7 @@ function PointsFunction(question) {
 
             break;
         case 4:
+            selection = 4;
             DialogSelected(1, 0);
             DialogSelected(2, 8);
             DialogSelected(2, 8);
@@ -225,26 +228,14 @@ function PointsFunction(question) {
             break;
 
     }
+    console.log(selection);
 } //assigning points to questions
 var dialogNum, givenPoints;
 function DialogSelected(dialogNum,givenPoints) {
     if (nextDialog === dialogNum) {
         PointGiver(givenPoints);
     }
-    switch (nextDialog) {
-        case 1:
-            selection = 1;
-            break;
-        case 2:
-            selection = 2;
-            break;
-        case 3:
-            selection = 3;
-            break;
-        case 4:
-            selection = 4;
-            break;
-    }
+
 }
 
 //---------Responses
@@ -253,8 +244,8 @@ var responseOne,responseTwo,ResponseThree,ResponseFour;
 function Response(response) {
             TextChange(response, "", "", "", "Next");
 }
-function ChangingResponse(question,ResponseOne,ResponseTwo,ResponseThree,ResponseFour) {
-    switch (question) {
+function ChangingResponse(selection,ResponseOne,ResponseTwo,ResponseThree,ResponseFour) {
+    switch (selection) {
         case 1:
             Response(ResponseOne);
             break;
