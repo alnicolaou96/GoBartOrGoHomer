@@ -99,22 +99,18 @@ function NextQuestion(question) {
     switch (question) {
         case 1:
             ChangingDialog();
-            Response("test1");
             PlayerSwitch();
             break;
         case 2:
             ChangingDialog();
-            Response("test2");
             PlayerSwitch();
             break;
         case 3:
             ChangingDialog();
-            Response("test3");
             PlayerSwitch();
             break;
         case 4:
             ChangingDialog();
-            Response("test4");
             PlayerSwitch();
             break;
     }
@@ -195,6 +191,7 @@ function ChangingDialog() {
 }
 
 //---------Points Function
+var selection = 0;
 function PointsFunction(question) {
     switch (question) {
         case 1:
@@ -234,12 +231,42 @@ function DialogSelected(dialogNum,givenPoints) {
     if (nextDialog === dialogNum) {
         PointGiver(givenPoints);
     }
+    switch (nextDialog) {
+        case 1:
+            selection = 1;
+            break;
+        case 2:
+            selection = 2;
+            break;
+        case 3:
+            selection = 3;
+            break;
+        case 4:
+            selection = 4;
+            break;
+    }
 }
 
 //---------Responses
-var response;
+var responseOne,responseTwo,ResponseThree,ResponseFour;
+
 function Response(response) {
             TextChange(response, "", "", "", "Next");
- 
+}
+function ChangingResponse(question,ResponseOne,ResponseTwo,ResponseThree,ResponseFour) {
+    switch (question) {
+        case 1:
+            Response(ResponseOne);
+            break;
+        case 2:
+            Response(ResponseTwo);
+            break;
+        case 3:
+            Response(ResponseThree);
+            break;
+        case 4:
+            Response(ResponseFour);
+            break;
+    }
 }
 
