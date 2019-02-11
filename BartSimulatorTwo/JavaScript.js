@@ -103,46 +103,65 @@ function NextQuestion(question) {
             selection = 1;
             ChangingDialog();
             PlayerSwitch();
+            console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
+            console.log(nextDialog);
+
             break;
         case 2:
             selection = 2;
             ChangingDialog();
             PlayerSwitch();
+            console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
+            console.log(nextDialog);
             break;
         case 3:
             selection = 3;
             ChangingDialog();
             PlayerSwitch();
+            console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
+            console.log(nextDialog);
             break;
         case 4:
             selection = 4;
             ChangingDialog();
             PlayerSwitch();
+            console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
+            console.log(nextDialog);
+
             break;
     }
     console.log(clicks);
 }
 
-//---------Player switch and dialog counter
+//---------Player switch and dialog counter and response
 var player;
 var playerTurn = 1;
 var nextDialog = 1;
 function PlayerSwitch() {
     playerTurn++;
-    if (playerTurn % 2 === 0) {
-        player = 2;
-        alert("player 1's turn");
-    }
-    else {
-        alert("player 2's turn");
+    if (playerTurn % 2 === 0 && playerTurn % 4 !== 0) {
         player = 1;
+        alert("player 1's turn");
+        
+    }
+    else if(playerTurn%4===0){
+        player = 2;
+        alert("player 2's turn");
+
     }
 
     if (clicks % 4===0) {
         nextDialog++;
     }
     if (clicks % 2 === 0) {
-        ChangingResponse(selection, "test1", "test2", "test3", "test4");
+        switch (nextDialog) {
+            case 1:
+                ChangingResponse(selection, "test1", "test2", "test3", "test4");
+                break;
+            case 2:
+                ChangingResponse(selection, "testA", "testB", "testC", "testD");
+                break;
+        }
     }
 }
 
@@ -208,39 +227,38 @@ function PointsFunction(question) {
         case 1:
             DialogSelected(1, 0);
             DialogSelected(2, 1); //points for question 1
-            DialogSelected(3, 2); //question 2
-            DialogSelected(4, 3); // question 3 et cetera
+            DialogSelected(3, 0); //question 2
+            DialogSelected(4, 1); // question 3 et cetera
 
 
             break;
         case 2:
             DialogSelected(1, 0);
-            DialogSelected(2, 5);
-            DialogSelected(3, 8);
-            DialogSelected(4, 8);
+            DialogSelected(2, 2);
+            DialogSelected(3, 0);
+            DialogSelected(4, 2);
 
             break;
         case 3:
             DialogSelected(1, 0);
             DialogSelected(2, 3);
-            DialogSelected(3, 8);
-            DialogSelected(4, 8);
+            DialogSelected(3, 3);
+            DialogSelected(4, 3);
 
             break;
         case 4:
             DialogSelected(1, 0);
-            DialogSelected(2, 8);
-            DialogSelected(2, 8);
-            DialogSelected(4, 8);
+            DialogSelected(2, 4);
+            DialogSelected(2, 0);
+            DialogSelected(4, 4);
 
             break;
 
     }
-    console.log(selection);
 } //assigning points to questions
 var dialogNum, givenPoints;
 function DialogSelected(dialogNum,givenPoints) {
-    if (nextDialog === dialogNum) {
+    if (clicks === dialogNum) {
         PointGiver(givenPoints);
     }
 
