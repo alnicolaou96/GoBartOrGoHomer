@@ -95,7 +95,9 @@ function Stacy() {
 
 //---------Next Question
 var question;
+var clicks = 0;
 function NextQuestion(question) {
+    clicks++;
     switch (question) {
         case 1:
             ChangingDialog();
@@ -114,7 +116,7 @@ function NextQuestion(question) {
             PlayerSwitch();
             break;
     }
-
+    console.log(clicks);
 }
 
 //---------Player switch and dialog counter
@@ -128,11 +130,16 @@ function PlayerSwitch() {
         alert("player 1's turn");
     }
     else {
-        nextDialog++;
         alert("player 2's turn");
         player = 1;
     }
-        
+
+    if (clicks % 4===0) {
+        nextDialog++;
+    }
+    if (clicks % 2 === 0) {
+        ChangingResponse(selection, "test1", "test2", "test3", "test4");
+    }
 }
 
 //---------Points 
