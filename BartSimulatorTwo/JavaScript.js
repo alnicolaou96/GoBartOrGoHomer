@@ -100,18 +100,22 @@ function NextQuestion(question) {
     clicks++;
     switch (question) {
         case 1:
+            selection = 1;
             ChangingDialog();
             PlayerSwitch();
             break;
         case 2:
+            selection = 2;
             ChangingDialog();
             PlayerSwitch();
             break;
         case 3:
+            selection = 3;
             ChangingDialog();
             PlayerSwitch();
             break;
         case 4:
+            selection = 4;
             ChangingDialog();
             PlayerSwitch();
             break;
@@ -202,7 +206,6 @@ var selection = 0;
 function PointsFunction(question) {
     switch (question) {
         case 1:
-            selection = 1;
             DialogSelected(1, 0);
             DialogSelected(2, 1); //points for question 1
             DialogSelected(3, 2); //question 2
@@ -211,14 +214,13 @@ function PointsFunction(question) {
 
             break;
         case 2:
-            selection = 2;
             DialogSelected(1, 0);
             DialogSelected(2, 5);
             DialogSelected(3, 8);
             DialogSelected(4, 8);
 
             break;
-        case 3: selection = 3;
+        case 3:
             DialogSelected(1, 0);
             DialogSelected(2, 3);
             DialogSelected(3, 8);
@@ -226,7 +228,6 @@ function PointsFunction(question) {
 
             break;
         case 4:
-            selection = 4;
             DialogSelected(1, 0);
             DialogSelected(2, 8);
             DialogSelected(2, 8);
