@@ -302,3 +302,23 @@ blushingStacy = "SchoolGirl_Blushing.png";
 heartsStacy = "SchoolGirl_Hearts.png";
 sickStacy = "SchoolGirl_Sick.png";
 defaultStacy = "SchoolGirl_Default";
+
+var reactionOne, reactionTwo, reactionThree, reactionFour;
+function ReactionImage(reactionOne, reactionTwo, reactionThree, reactionFour) {
+    var x = document.getElementById("characterPicture").src;
+    switch (selection) {
+        case 1:
+            x = reactionOne;
+            break;
+        case 2:
+            x = reactionTwo;
+            break;
+        case 3:
+            x = reactionThree;
+            break;
+        case 4:
+            x = reactionFour;
+            break;
+
+    }
+}
