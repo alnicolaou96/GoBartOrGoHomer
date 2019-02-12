@@ -141,13 +141,11 @@ function PlayerSwitch() {
     playerTurn++;
     if (playerTurn % 2 === 0 && playerTurn % 4 !== 0) {
         player = 1;
-        alert("player 1's turn");
-        
+        alert("player 1's turn");      
     }
     else if(playerTurn%4===0){
         player = 2;
         alert("player 2's turn");
-
     }
 
     if (clicks % 4===0) {
@@ -287,3 +285,20 @@ function ChangingResponse(selection,ResponseOne,ResponseTwo,ResponseThree,Respon
     }
 }
 
+//---------Reaction images
+var angryChad, happyChad, sadChad, snapChad, thumbChad,defaultChad;
+var angryStacy, blushingStacy, heartsStacy, sickStacy,defaultStacy;
+
+//chad pic variables
+angryChad = "BuffHouse_Angry.png";
+happyChad = "BuffHouse_Happy.png";
+snapChad = "BuffHouse_Snap.png";
+thumbChad = "BuffHouse_ThumbsUp.png";
+sadChad = "BuffHouse_Sad.png";
+defaultChad = "BuffHouse_Default.png";
+//stacy pic variables
+angryStacy = "SchoolGirl_Angry.png";
+blushingStacy = "SchoolGirl_Blushing.png";
+heartsStacy = "SchoolGirl_Hearts.png";
+sickStacy = "SchoolGirl_Sick.png";
+defaultStacy = "SchoolGirl_Default";
