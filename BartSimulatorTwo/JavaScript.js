@@ -104,7 +104,6 @@ function NextQuestion(question) {
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
-            console.log(nextDialog);
 
             break;
         case 2:
@@ -112,25 +111,21 @@ function NextQuestion(question) {
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
-            console.log(nextDialog);
             break;
         case 3:
             selection = 3;
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
-            console.log(nextDialog);
             break;
         case 4:
             selection = 4;
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
-            console.log(nextDialog);
 
             break;
     }
-    console.log(clicks);
 }
 
 //---------Player switch and dialog counter and response
@@ -152,13 +147,35 @@ function PlayerSwitch() {
         nextDialog++;
     }
     if (clicks % 2 === 0) {
-        switch (nextDialog) {
-            case 1:
-                ChangingResponse(selection, "test1", "test2", "test3", "test4");
-                break;
-            case 2:
-                ChangingResponse(selection, "testA", "testB", "testC", "testD");
-                break;
+        if (character === 1) {
+            switch (nextDialog) {//chad responses
+                case 1:
+                    ReactionImage(selection, angryChad, snapChad, sadChad, happyChad);//reaction image
+                    ChangingResponse(selection, "testchad1", "test2", "test3", "test4");//player 1 response
+                    break;
+                case 2:
+                    ReactionImage(selection, happyChad, sadChad, snapChad, angryChad);//reaction image for p2
+                    ChangingResponse(selection, "test2", "testB", "testC", "testD");//player 2 response
+                    break;
+            }
+        }
+        else if (character === 2) {
+            switch (nextDialog) {//stacy images
+                case 1:
+                    ChangingResponse(selection, "teststacy1", "test2", "test3", "test4");
+                    break;//player 1 response
+                case 2:
+                    ChangingResponse(selection, "test2", "testB", "testC", "testD");
+                    break;//player 2 response
+            }
+        }
+    }//responses
+    if (clicks % 3 === 0) {
+        if (character === 1) {
+            document.getElementById("characterPicture").src = defaultChad;
+        }
+        else if (character === 2) {
+            document.getElementById("characterPicture").src = defaultStacy;
         }
     }
 }
@@ -224,7 +241,7 @@ function PointsFunction(question) {
     switch (question) {
         case 1:
             DialogSelected(1, 0);
-            DialogSelected(2, 1); //points for question 1
+            DialogSelected(2, -1); //points for question 1
             DialogSelected(3, 0); //question 2
             DialogSelected(4, 1); // question 3 et cetera
 
@@ -232,23 +249,23 @@ function PointsFunction(question) {
             break;
         case 2:
             DialogSelected(1, 0);
-            DialogSelected(2, 2);
+            DialogSelected(2, 0);
             DialogSelected(3, 0);
             DialogSelected(4, 2);
 
             break;
         case 3:
             DialogSelected(1, 0);
-            DialogSelected(2, 3);
-            DialogSelected(3, 3);
-            DialogSelected(4, 3);
+            DialogSelected(2, 1);
+            DialogSelected(3, 0);
+            DialogSelected(4, -1);
 
             break;
         case 4:
             DialogSelected(1, 0);
-            DialogSelected(2, 4);
-            DialogSelected(2, 0);
-            DialogSelected(4, 4);
+            DialogSelected(2, 2);
+            DialogSelected(3, 0);
+            DialogSelected(4, 0);
 
             break;
 
@@ -304,20 +321,20 @@ sickStacy = "SchoolGirl_Sick.png";
 defaultStacy = "SchoolGirl_Default";
 
 var reactionOne, reactionTwo, reactionThree, reactionFour;
-function ReactionImage(reactionOne, reactionTwo, reactionThree, reactionFour) {
-    var x = document.getElementById("characterPicture").src;
+function ReactionImage(selection,reactionOne, reactionTwo, reactionThree, reactionFour) {
+    var x = document.getElementById("characterPicture");
     switch (selection) {
         case 1:
-            x = reactionOne;
+            x.src = reactionOne;
             break;
         case 2:
-            x = reactionTwo;
+            x.src = reactionTwo;
             break;
         case 3:
-            x = reactionThree;
+            x.src = reactionThree;
             break;
         case 4:
-            x = reactionFour;
+            x.src = reactionFour;
             break;
 
     }
