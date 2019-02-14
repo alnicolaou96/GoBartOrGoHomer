@@ -124,6 +124,7 @@ function NextQuestion(question) {
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
 
+
             break;
     }
 }
@@ -136,20 +137,24 @@ function PlayerSwitch() {
     playerTurn++;
     if (playerTurn % 2 === 0 && playerTurn % 4 !== 0) {
         player = 1;
-        alert("player 1's turn");      
+        if (clicks < 12) {
+        alert("player 1's turn"); 
+        }
+     
     }
     else if(playerTurn%4===0){
         player = 2;
+        if (clicks < 12) {
         alert("player 2's turn");
+        }
+
     }
 
     if (clicks % 4===0) {
         nextDialog++;
     }
-    var respond = false;
-    if (clicks % 2 === 0) {
+    if (clicks % 2 === 0 && clicks < 12) {
         if (character === 1) {
-            var responder= true;
             switch (nextDialog) {//chad responses
                 case 1:
                     ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);//reaction image
@@ -247,7 +252,6 @@ function PlayerSwitch() {
             document.getElementById("characterPicture").src = defaultStacy;
         }
     }
-    respond = false;
 }
 
 //---------Points 
@@ -315,6 +319,9 @@ function ChangingDialog() {
                     , "next" //+0 ending card
                 );
                 break;
+        }
+        if (clicks === 13) {
+            Winner();
         }
     } //chad dialog
     else if (character === 2) {
@@ -468,6 +475,33 @@ function ReactionImage(selection,reactionOne, reactionTwo, reactionThree, reacti
         case 4:
             x.src = reactionFour;
             break;
+
+    }
+}
+
+//---------Win Screen
+var winner = 0;
+function Winner() {
+    if (oneScore > twoScore) {
+        winner = "Player One! <3";
+    }
+    else if (twoScore > oneScore) {
+        winner = "Player Two! <3";
+    }
+    else if (oneScore === twoScore) {
+        winner = "Neither of you";
+    }
+
+
+    if (clicks === 11) {
+        TextChange(winner,"","","","Play Again?");
+        var x = document.getElementById("characterPicture");
+        if (character === 1) {
+            x.src = "BuffHouse_Detailed";
+        }
+        else if (character === 2) {
+            x.src = "SchoolGirl_Detailed";
+        }
 
     }
 }
