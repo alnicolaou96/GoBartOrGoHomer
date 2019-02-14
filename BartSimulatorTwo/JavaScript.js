@@ -146,8 +146,10 @@ function PlayerSwitch() {
     if (clicks % 4===0) {
         nextDialog++;
     }
+    var respond = false;
     if (clicks % 2 === 0) {
         if (character === 1) {
+            var responder= true;
             switch (nextDialog) {//chad responses
                 case 1:
                     ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);//reaction image
@@ -182,7 +184,7 @@ function PlayerSwitch() {
 
                     break;
                 case 5:
-                    reactionImage(selection, happyChad, sadChad, angryChad, thumbChad);
+                    ReactionImage(selection, happyChad, sadChad, angryChad, thumbChad);
                     ChangingResponse(selection, "Colonial Chad smirks. “Yeah, man, you get it! That’s just how it is. You gotta mix it up sometime, you know?"
                         , "Colonial Chad grins, but then looks down. “Yeah, man, it’s what I’m known for.”"
                         , "Colonial Chad looks pissed. “I never said that, bro! I just want some hotties to move in, man! I’m in my PRIME, guy!"
@@ -190,35 +192,35 @@ function PlayerSwitch() {
                     );
                     break;
                 case 6:
-                    reactionImage(selection, happyChad, sadChad, angryChad, thumbChad);
+                    ReactionImage(selection, happyChad, sadChad, angryChad, thumbChad);
                     ChangingResponse(selection, "Colonial Chad smirks. “Yeah, man, you get it! That’s just how it is. You gotta mix it up sometime, you know?"
                         , "Colonial Chad grins, but then looks down. “Yeah, man, it’s what I’m known for.”"
                         , "Colonial Chad looks pissed. “I never said that, bro! I just want some hotties to move in, man! I’m in my PRIME, guy!"
                         , "Colonial Chad nods. “Yeah, man. We’re on the same page, yeah.");
                     break;
                 case 7:
-                    reactionImage(selection, sadChad, thumbChad, angryChad, happyChad);
+                    ReactionImage(selection, sadChad, thumbChad, angryChad, happyChad);
                     ChangingResponse("Colonial Chad lowers the camera a bit. “Yeah… Me too. Yup. Definitely professional quality. Yeah…”"
                         , "Colonial Chad gets stars in his eyes. “Working with a pro?? Oh, wow. Heck yeah, man, that sounds amazing! But I want creative control!”"
                         , "Colonial Chad immediately pulls the camera to his side defensively. “Oh. Oh okay. I don’t have to-- I can show you later. What’s it to you, anyway? Don’t think I’m good enough?” "
                         ,"Colonial Chad’s shudders flush a deep red. “I mean… Yeah, I guess… It’s just a hobby, you know, wanna look my best for… stuff.” ");
                     break;
                 case 8:
-                    reactionImage(selection, sadChad, thumbChad, angryChad, happyChad);
+                    ReactionImage(selection, sadChad, thumbChad, angryChad, happyChad);
                     ChangingResponse("Colonial Chad lowers the camera a bit. “Yeah… Me too. Yup. Definitely professional quality. Yeah…”"
                         , "Colonial Chad gets stars in his eyes. “Working with a pro?? Oh, wow. Heck yeah, man, that sounds amazing! But I want creative control!”"
                         , "Colonial Chad immediately pulls the camera to his side defensively. “Oh. Oh okay. I don’t have to-- I can show you later. What’s it to you, anyway? Don’t think I’m good enough?” "
                         , "Colonial Chad’s shudders flush a deep red. “I mean… Yeah, I guess… It’s just a hobby, you know, wanna look my best for… stuff.” ");
                     break;
                 case 9:
-                    reactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
+                    ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
                     ChangingResponse(selection, "Colonial Chad actually stomps his foot like a child. “NEVER! A healthy home is a happy home, bruh! Health is life ‘cause health is long life, bruh!” "
                         , "Colonial Chad keeps right on flexing. “That’s not a real answer, but whatever. I’m not scared, bro.” "
                         , "Colonial Chad flexes harder. “As long as you say I’ll be taken care of, bro.”"
                         , "Colonial Chad pauses his flexing to collect himself. “O--oh yeah? Not that I’m worried. But good to know they’ll keep me looking right, bro.” ");
                     break;
                 case 10:
-                    reactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
+                    ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
                     ChangingResponse(selection, "Colonial Chad actually stomps his foot like a child. “NEVER! A healthy home is a happy home, bruh! Health is life ‘cause health is long life, bruh!” "
                         , "Colonial Chad keeps right on flexing. “That’s not a real answer, but whatever. I’m not scared, bro.” "
                         , "Colonial Chad flexes harder. “As long as you say I’ll be taken care of, bro.”"
@@ -237,7 +239,7 @@ function PlayerSwitch() {
             }
         }
     }//responses
-    if (clicks % 3 === 0) {
+    if (clicks % 4 !== 0 && clicks % 2 !== 0) {
         if (character === 1) {
             document.getElementById("characterPicture").src = defaultChad;
         }
@@ -245,6 +247,7 @@ function PlayerSwitch() {
             document.getElementById("characterPicture").src = defaultStacy;
         }
     }
+    respond = false;
 }
 
 //---------Points 
