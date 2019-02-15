@@ -104,6 +104,7 @@ function NextQuestion(question) {
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
+            console.log(clicks);
 
             break;
         case 2:
@@ -133,18 +134,19 @@ function NextQuestion(question) {
 var player;
 var playerTurn = 1;
 var nextDialog = 1;
+var end = false;
 function PlayerSwitch() {
     playerTurn++;
     if (playerTurn % 2 === 0 && playerTurn % 4 !== 0) {
         player = 1;
-        if (clicks < 12) {
+        if (end===false) {
         alert("player 1's turn"); 
         }
      
     }
     else if(playerTurn%4===0){
         player = 2;
-        if (clicks < 12) {
+        if (end===false) {
         alert("player 2's turn");
         }
 
@@ -153,7 +155,7 @@ function PlayerSwitch() {
     if (clicks % 4===0) {
         nextDialog++;
     }
-    if (clicks % 2 === 0 && clicks < 12) {
+    if (clicks % 2 === 0 && end===false) {
         if (character === 1) {
             switch (nextDialog) {//chad responses
                 case 1:
@@ -205,14 +207,14 @@ function PlayerSwitch() {
                     break;
                 case 7:
                     ReactionImage(selection, sadChad, thumbChad, angryChad, happyChad);
-                    ChangingResponse("Colonial Chad lowers the camera a bit. “Yeah… Me too. Yup. Definitely professional quality. Yeah…”"
+                    ChangingResponse(selection,"Colonial Chad lowers the camera a bit. “Yeah… Me too. Yup. Definitely professional quality. Yeah…”"
                         , "Colonial Chad gets stars in his eyes. “Working with a pro?? Oh, wow. Heck yeah, man, that sounds amazing! But I want creative control!”"
                         , "Colonial Chad immediately pulls the camera to his side defensively. “Oh. Oh okay. I don’t have to-- I can show you later. What’s it to you, anyway? Don’t think I’m good enough?” "
                         ,"Colonial Chad’s shudders flush a deep red. “I mean… Yeah, I guess… It’s just a hobby, you know, wanna look my best for… stuff.” ");
                     break;
                 case 8:
                     ReactionImage(selection, sadChad, thumbChad, angryChad, happyChad);
-                    ChangingResponse("Colonial Chad lowers the camera a bit. “Yeah… Me too. Yup. Definitely professional quality. Yeah…”"
+                    ChangingResponse(selection,"Colonial Chad lowers the camera a bit. “Yeah… Me too. Yup. Definitely professional quality. Yeah…”"
                         , "Colonial Chad gets stars in his eyes. “Working with a pro?? Oh, wow. Heck yeah, man, that sounds amazing! But I want creative control!”"
                         , "Colonial Chad immediately pulls the camera to his side defensively. “Oh. Oh okay. I don’t have to-- I can show you later. What’s it to you, anyway? Don’t think I’m good enough?” "
                         , "Colonial Chad’s shudders flush a deep red. “I mean… Yeah, I guess… It’s just a hobby, you know, wanna look my best for… stuff.” ");
@@ -230,7 +232,11 @@ function PlayerSwitch() {
                         , "Colonial Chad keeps right on flexing. “That’s not a real answer, but whatever. I’m not scared, bro.” "
                         , "Colonial Chad flexes harder. “As long as you say I’ll be taken care of, bro.”"
                         , "Colonial Chad pauses his flexing to collect himself. “O--oh yeah? Not that I’m worried. But good to know they’ll keep me looking right, bro.” ");
+                    end = true;
                     break;
+            }
+            if (end === true) {
+                Winner();
             }
         }
         else if (character === 2) {
@@ -319,9 +325,6 @@ function ChangingDialog() {
                     , "next" //+0 ending card
                 );
                 break;
-        }
-        if (clicks === 13) {
-            Winner();
         }
     } //chad dialog
     else if (character === 2) {
@@ -492,16 +495,12 @@ function Winner() {
         winner = "Neither of you";
     }
 
-
-    if (clicks === 11) {
         TextChange(winner,"","","","Play Again?");
         var x = document.getElementById("characterPicture");
         if (character === 1) {
-            x.src = "BuffHouse_Detailed";
+            x.src = "BuffHouse_Detailed.png";
         }
         else if (character === 2) {
-            x.src = "SchoolGirl_Detailed";
+            x.src = "SchoolGirl_Detailed.png";
         }
-
-    }
 }
