@@ -104,7 +104,6 @@ function NextQuestion(question) {
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
-            console.log(clicks);
 
             break;
         case 2:
@@ -136,6 +135,7 @@ var playerTurn = 1;
 var nextDialog = 1;
 var end = false;
 function PlayerSwitch() {
+
     playerTurn++;
     if (playerTurn % 2 === 0 && playerTurn % 4 !== 0) {
         player = 1;
@@ -152,7 +152,7 @@ function PlayerSwitch() {
 
     }
 
-    if (clicks % 4===0) {
+    if (clicks % 4 === 0); {
         nextDialog++;
     }
     if (clicks % 2 === 0 && end===false) {
@@ -355,7 +355,7 @@ function PointsFunction(question) {
             DialogSelected(1, 0);
             DialogSelected(2, -1); //points for question 1
             DialogSelected(3, 0); //Response 1
-            DialogSelected(4, 1); // question 2 et cetera
+            DialogSelected(4, -1); // question 2 et cetera
             DialogSelected(5, 0);
             DialogSelected(6, 2);//3
             DialogSelected(7, 0);
