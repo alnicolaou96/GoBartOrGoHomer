@@ -104,6 +104,8 @@ function NextQuestion(question) {
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
+            console.log(nextDialog + " next dialog");
+            console.log(clicks + " clicks");
 
             break;
         case 2:
@@ -123,6 +125,9 @@ function NextQuestion(question) {
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
+            if (nextDialog===7 && confirm("are you sure you want to start a new game?") === true) {
+                location.reload(); //restarts the program
+            }
 
 
             break;
@@ -152,10 +157,8 @@ function PlayerSwitch() {
 
     }
 
-    if (clicks % 4 === 0); {
-        nextDialog++;
-    }
-    if (clicks % 2 === 0 && end===false) {
+
+    if (clicks%2===0) {
         if (character === 1) {
             switch (nextDialog) {//chad responses
                 case 1:
@@ -164,79 +167,48 @@ function PlayerSwitch() {
                         , "Colonial Chad keeps inspecting his calves. “Nah, I can do better. I’m from the Colonial Revival, I should be in better shape for 90 years old.” "
                         , "Colonial Chad grins while checking out his calves. “Thanks, man. Gotta keep up with the upkeep, know what I’m sayin’?” "
                         , "Colonial Chad looks up from eyeing his calves and grins at you. “Naw, man, but thanks for asking.");//player 1 response
+                    nextDialog++;
                     break;
+
                 case 2:
-                    ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);//reaction image for p2
-                    ChangingResponse(selection, "Colonial Chad stops looking at his calves and leers at you. “You saying I don’t have a great foundation already, bro?"
-                        , "Colonial Chad keeps inspecting his calves. “Nah, I can do better. I’m from the Colonial Revival, I should be in better shape for 90 years old.” "
-                        , "Colonial Chad grins while checking out his calves. “Thanks, man. Gotta keep up with the upkeep, know what I’m sayin’?” "
-                        , "Colonial Chad looks up from eyeing his calves and grins at you. “Naw, man, but thanks for asking.");//player 2 response
+                    ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
+                    ChangingResponse(selection, "Colonial Chad looks haughty. “I’m already a dream home. Potential? I’m already hot property."
+                        , "Colonial Chad bobs his head from side to side. “Wouldn’t mind having someone take care of that mold problem for me,” he mumbles to himself."
+                        , "Colonial Chad swings his head, rattling his roof. “You’d never guess I get re-shingling treatments, would you?"
+                        , "Colonial Chad stops hopping as much and looks almost bashful. “Oh, you picked me? I mean, why wouldn’t you pick me. Thanks, ...bro"
+                    );
+                    nextDialog++;
                     break;
+
                 case 3:
-                    ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
-                    ChangingResponse(selection, "Colonial Chad looks haughty. “I’m already a dream home. Potential? I’m already hot property."
-                        , "Colonial Chad bobs his head from side to side. “Wouldn’t mind having someone take care of that mold problem for me,” he mumbles to himself."
-                        , "Colonial Chad swings his head, rattling his roof. “You’d never guess I get re-shingling treatments, would you?"
-                        ,"Colonial Chad stops hopping as much and looks almost bashful. “Oh, you picked me? I mean, why wouldn’t you pick me. Thanks, ...bro."
-                    );
-
-                    break;
-                case 4:
-                    ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
-                    ChangingResponse(selection, "Colonial Chad looks haughty. “I’m already a dream home. Potential? I’m already hot property."
-                        , "Colonial Chad bobs his head from side to side. “Wouldn’t mind having someone take care of that mold problem for me,” he mumbles to himself."
-                        , "Colonial Chad swings his head, rattling his roof. “You’d never guess I get re-shingling treatments, would you?"
-                        , "Colonial Chad stops hopping as much and looks almost bashful. “Oh, you picked me? I mean, why wouldn’t you pick me. Thanks, ...bro."
-                    );
-
-                    break;
-                case 5:
-                    ReactionImage(selection, happyChad, sadChad, angryChad, thumbChad);
-                    ChangingResponse(selection, "Colonial Chad smirks. “Yeah, man, you get it! That’s just how it is. You gotta mix it up sometime, you know?"
-                        , "Colonial Chad grins, but then looks down. “Yeah, man, it’s what I’m known for.”"
-                        , "Colonial Chad looks pissed. “I never said that, bro! I just want some hotties to move in, man! I’m in my PRIME, guy!"
-                        , "Colonial Chad nods. “Yeah, man. We’re on the same page, yeah."
-                    );
-                    break;
-                case 6:
                     ReactionImage(selection, happyChad, sadChad, angryChad, thumbChad);
                     ChangingResponse(selection, "Colonial Chad smirks. “Yeah, man, you get it! That’s just how it is. You gotta mix it up sometime, you know?"
                         , "Colonial Chad grins, but then looks down. “Yeah, man, it’s what I’m known for.”"
                         , "Colonial Chad looks pissed. “I never said that, bro! I just want some hotties to move in, man! I’m in my PRIME, guy!"
                         , "Colonial Chad nods. “Yeah, man. We’re on the same page, yeah.");
+                    nextDialog++;
                     break;
-                case 7:
-                    ReactionImage(selection, sadChad, thumbChad, angryChad, happyChad);
-                    ChangingResponse(selection,"Colonial Chad lowers the camera a bit. “Yeah… Me too. Yup. Definitely professional quality. Yeah…”"
-                        , "Colonial Chad gets stars in his eyes. “Working with a pro?? Oh, wow. Heck yeah, man, that sounds amazing! But I want creative control!”"
-                        , "Colonial Chad immediately pulls the camera to his side defensively. “Oh. Oh okay. I don’t have to-- I can show you later. What’s it to you, anyway? Don’t think I’m good enough?” "
-                        ,"Colonial Chad’s shudders flush a deep red. “I mean… Yeah, I guess… It’s just a hobby, you know, wanna look my best for… stuff.” ");
-                    break;
-                case 8:
+                case 4:
                     ReactionImage(selection, sadChad, thumbChad, angryChad, happyChad);
                     ChangingResponse(selection,"Colonial Chad lowers the camera a bit. “Yeah… Me too. Yup. Definitely professional quality. Yeah…”"
                         , "Colonial Chad gets stars in his eyes. “Working with a pro?? Oh, wow. Heck yeah, man, that sounds amazing! But I want creative control!”"
                         , "Colonial Chad immediately pulls the camera to his side defensively. “Oh. Oh okay. I don’t have to-- I can show you later. What’s it to you, anyway? Don’t think I’m good enough?” "
                         , "Colonial Chad’s shudders flush a deep red. “I mean… Yeah, I guess… It’s just a hobby, you know, wanna look my best for… stuff.” ");
+                    nextDialog++;
                     break;
-                case 9:
+                case 5:
                     ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
                     ChangingResponse(selection, "Colonial Chad actually stomps his foot like a child. “NEVER! A healthy home is a happy home, bruh! Health is life ‘cause health is long life, bruh!” "
                         , "Colonial Chad keeps right on flexing. “That’s not a real answer, but whatever. I’m not scared, bro.” "
                         , "Colonial Chad flexes harder. “As long as you say I’ll be taken care of, bro.”"
                         , "Colonial Chad pauses his flexing to collect himself. “O--oh yeah? Not that I’m worried. But good to know they’ll keep me looking right, bro.” ");
+                    nextDialog++;
                     break;
-                case 10:
-                    ReactionImage(selection, angryChad, sadChad, thumbChad, happyChad);
-                    ChangingResponse(selection, "Colonial Chad actually stomps his foot like a child. “NEVER! A healthy home is a happy home, bruh! Health is life ‘cause health is long life, bruh!” "
-                        , "Colonial Chad keeps right on flexing. “That’s not a real answer, but whatever. I’m not scared, bro.” "
-                        , "Colonial Chad flexes harder. “As long as you say I’ll be taken care of, bro.”"
-                        , "Colonial Chad pauses his flexing to collect himself. “O--oh yeah? Not that I’m worried. But good to know they’ll keep me looking right, bro.” ");
-                    end = true;
+                case 6:
+                    Winner();
+                    end === true;
+                    nextDialog++;
                     break;
-            }
-            if (end === true) {
-                Winner();
             }
         }
         else if (character === 2) {
@@ -367,9 +339,9 @@ function PointsFunction(question) {
             break;
         case 2:
             DialogSelected(1, 0);
-            DialogSelected(2, 0);
+            DialogSelected(2, 0);//1
             DialogSelected(3, 0);
-            DialogSelected(4, 2);
+            DialogSelected(4, 0);//2
             DialogSelected(5, 0);
             DialogSelected(6, 0);//3
             DialogSelected(7, 0);
@@ -382,9 +354,9 @@ function PointsFunction(question) {
             break;
         case 3:
             DialogSelected(1, 0);
-            DialogSelected(2, 1);
+            DialogSelected(2, 1);//1
             DialogSelected(3, 0);
-            DialogSelected(4, -1);
+            DialogSelected(4, 1);//2
             DialogSelected(5, 0);
             DialogSelected(6, -1);//3
             DialogSelected(7, 0);
@@ -397,9 +369,9 @@ function PointsFunction(question) {
             break;
         case 4:
             DialogSelected(1, 0);
-            DialogSelected(2, 2);
+            DialogSelected(2, 2);//1
             DialogSelected(3, 0);
-            DialogSelected(4, 0);
+            DialogSelected(4, 2);//2
             DialogSelected(5, 0);
             DialogSelected(6, 1);//3
             DialogSelected(7, 0);
@@ -488,7 +460,7 @@ function Winner() {
     if (oneScore > twoScore) {
         winner = "Player One! <3";
     }
-    else if (twoScore > oneScore) {
+    else if (oneScore < twoScore) {
         winner = "Player Two! <3";
     }
     else if (oneScore === twoScore) {
