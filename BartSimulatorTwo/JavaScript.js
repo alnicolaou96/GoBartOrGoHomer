@@ -125,9 +125,6 @@ function NextQuestion(question) {
             ChangingDialog();
             PlayerSwitch();
             console.log("player one score: " + oneScore + " Player Two Score: " + twoScore);
-            if (nextDialog===7 && confirm("are you sure you want to start a new game?") === true) {
-                location.reload(); //restarts the program
-            }
 
 
             break;
@@ -203,12 +200,14 @@ function PlayerSwitch() {
                         , "Colonial Chad flexes harder. “As long as you say I’ll be taken care of, bro.”"
                         , "Colonial Chad pauses his flexing to collect himself. “O--oh yeah? Not that I’m worried. But good to know they’ll keep me looking right, bro.” ");
                     nextDialog++;
+                    end = true;
+
                     break;
                 case 6:
                     Winner();
-                    end === true;
                     nextDialog++;
                     break;
+
             }
         }
         else if (character === 2) {
@@ -296,6 +295,10 @@ function ChangingDialog() {
                     , ""
                     , "next" //+0 ending card
                 );
+                break;
+            case 7:
+                if(confirm("do you want to restart?"))
+                location.reload();
                 break;
         }
     } //chad dialog
