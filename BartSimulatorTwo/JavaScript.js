@@ -224,6 +224,9 @@ function PlayerSwitch() {
     if (clicks % 4 !== 0 && clicks % 2 !== 0) {
         if (character === 1) {
             document.getElementById("characterPicture").src = defaultChad;
+            if (nextDialog === 4) {
+                document.getElementById("characterPicture").src = snapChad;
+            }
         }
         else if (character === 2) {
             document.getElementById("characterPicture").src = defaultStacy;
@@ -477,5 +480,8 @@ function Winner() {
         }
         else if (character === 2) {
             x.src = "SchoolGirl_Detailed.png";
-        }
+    }
+
+    document.getElementById("audio").src = "drum.ogg";
+
 }
