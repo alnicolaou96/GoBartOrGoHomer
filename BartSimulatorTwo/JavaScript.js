@@ -213,11 +213,55 @@ function PlayerSwitch() {
         else if (character === 2) {
             switch (nextDialog) {//stacy images
                 case 1:
-                    ChangingResponse(selection, "teststacy1", "test2", "test3", "test4");
-                    break;//player 1 response
+                    ReactionImage(selection,angryStacy,sickStacy,defaultStacy,heartsStacy);
+                    ChangingResponse(selection
+                        , "Stacy Halls scoffs, offended. “What kind of school is okay with a bad tardy record, huh? I’m leaving when this period ends, period."
+                        , "Stacy Halls groans. “That’s what they said about the cleanup after someone blew up a stinkbomb in the labs. You know how long that took?"
+                        , "Stacy Halls looks pleased with herself. “As long as you give me a good out. I have bored PTA parents to report to, you know."
+                        , "Stacy Halls perks up. “Oh? Am I going to become... A private school? A COLLEGE?");
+                    nextDialog++;
+                    break;
                 case 2:
-                    ChangingResponse(selection, "test2", "testB", "testC", "testD");
-                    break;//player 2 response
+                    ReactionImage(selection, angryStacy, sickStacy, defaultStacy, heartsStacy);
+                    ChangingResponse(selection
+                        , "Stacy Halls grabs her stomach and angrily tells you, “You think I don’t know about that? Not that you should be talking about going through all my pictures, WEIRDO.” "
+                        , "Stacy Halls rolls her eyes. “That’s what everyone says. I know I’m a model school, but that doesn’t mean I need everyone fighting over me.”"
+                        , "Stacy Halls suddenly looks more attentive. “The old outfits do overheat. And look like the ‘70s threw up on our cheerleaders. Yeah, you have my attention.”"
+                        , "Stacy Halls almost jumps in place. “OH! Yes, I’ve been saying that forever! Everyone’s so worried about our facilities, but people need to listen to me talk more!” ");
+                    nextDialog++;
+                    break;
+                case 3:
+                    ReactionImage(selection, angryStacy, heartsStacy, defaultStacy, sickStacy);
+                    ChangingResponse(selection
+                        , "Stacy Halls instantly gets pissed. “Don’t take our music department! Gosh, why is everything always about give or take! Forget it.”"
+                        , "Stacy Halls practically bounds in place. “See, that’s what I want to hear! One with swimming lanes and two diving boards is fine, I don’t need a hot tub or sauna or anything that fancy.” "
+                        , "Stacy Halls sashays in place. “I look like I should have one, right? And that’s fine. I’d get work done for that.”"
+                        , "Stacy Halls looks sick. “Ugh, weak-willed people make me wanna barf.” ");
+                    nextDialog++;
+                    break;
+                case 4:
+                    ReactionImage(selection, sickStacy, heartsStacy, defaultStacy, angryStacy);
+                    ChangingResponse(selection
+                        , "Stacy Halls frowns. “I mean, that’s good, I guess. Yeah, we’ve had a boxing team for... for over a decade, I mean... never mind.” "
+                        , "Stacy Halls grins from ear to ear. “Thank you for noticing! That’s... really nice of you to say. We work really hard here, even if our arms aren’t-- never mind. Thanks! "
+                        , "Stacy Halls looks satisfied with that answer. “That’s all you needed to say.” "
+                        , "“OH!” Stacy Halls yelps immediately. “So you don’t care about my passion, and you gotta insult it too, huh? You’re not doing so well, man.” ");
+                    nextDialog++;
+                    break;
+                case 5:
+                    ReactionImage(selection, defaultStacy, angryStacy, sickStacy, heartsStacy);
+                    ChangingResponse(selection
+                        , "Stacy Halls smirks. “I appreciate someone who can collaborate. This could work for me.” "
+                        , "Stacy Halls flares her nostrils. “Just gonna try to buy me, huh? You can’t even answer the question!” "
+                        , "Stacy Halls gags. “Ugh, I’m good on empty promises. I get enough of those when kids ask for assignment extensions.” "
+                        , "Stacy Halls looks taken aback, then subconsciously smiles. “I feel so understood. See, why can’t more people take the time to get to know each other?” ");
+                    nextDialog++;
+                    end = true;
+                    break;
+                case 6:
+                    Winner();
+                    nextDialog++;
+                    break;
             }
         }
     }//responses
@@ -300,7 +344,7 @@ function ChangingDialog() {
                 );
                 break;
             case 7:
-                if(confirm("do you want to restart?"))
+                if(confirm("are you positive you want to restart?"))
                 location.reload();
                 break;
         }
@@ -309,17 +353,55 @@ function ChangingDialog() {
         switch (nextDialog) {
             case 1:
                 TextChange("Hey, what’s up? Is there a reason you pulled me away from my friends? I don’t think I know you... Look, I have clubs soon, so I hope this is quick. If clubs start late again, I’m never gonna hear the end of it. I’m too busy to deal with that. Do you know how many calls I--"
-                    , "I’m sure Stacy Halls can get away with being late."
-                    , "It’ll be quick!"
-                    , "If clubs start late, you can blame me."
-                    , "This is big news about your future, Stacy Halls.");
+                    , "I’m sure Stacy Halls can get away with being late."//-1
+                    , "It’ll be quick!"//0
+                    , "If clubs start late, you can blame me."//1
+                    , "This is big news about your future, Stacy Halls."//2
+                );
                 break;
             case 2:
                 TextChange("*Suddenly, Stacy Halls slaps her thigh*</br> Oh, duh! This is about the whole redistricting thing, isn’t it? Let me guess, you’re offering to remodel me... Look, the superintendent told me I have nothing to worry about. As long as I have the best football field-- and I do-- they're not going to shut me down. I don’t need your help."
-                    , "No one’s worried about your football field! But your boiler room is seriously out of code. We’re just trying to get you right."
-                    , "Everyone could use some help looking their best. We just want to show you in the best light possible!"
-                    , "You say that, but we know you’ve been eyeing those new cheerleading outfits..."
-                    , "We’re not trying to fix up your school, we’re trying to optimize your curriculum.");
+                    , "No one’s worried about your football field! But your boiler room is seriously out of code. We’re just trying to get you right."//-1
+                    , "Everyone could use some help looking their best. We just want to show you in the best light possible!"//0
+                    , "You say that, but we know you’ve been eyeing those new cheerleading outfits..."//1
+                    , "We’re not trying to fix up your school, we’re trying to optimize your curriculum."//2
+                );
+                break;
+            case 3:
+                TextChange("“I mean...” Stacy Halls tilts her head from side to side. “I’m ready to grow up from being a public high school. Or at least mix it up—been looking at vocational schools.” She taps her foot.</br> “And ?” You ask, since she clearly wants you to ask.</br>She grins.“I do love swimming.And a pool would REALLY appeal to anyone looking for a Division III swim team...” "
+                    , " Sure. We can replace the band room with a pool, no sweat. "//-1
+                    , "What kind of pool? "//+2
+                    , "I don’t want to promise you a pool when I don’t know if I can deliver. But I’ll try."//0
+                    , "Honestly, I'm surprised you don’t already have one. Just a warning, it’ll take a while to add that to the school. "//+1
+                );
+                break;
+            case 4:
+                TextChange("Oh, um...” Stacy Halls suddenly loses her assertive edge.“So...I do have one mandatory, must - have condition.” </br>“Which is ?” You ask.</br>She reaches around to the back of her waist and brings out boxing gloves that, apparently, had been hanging there.While putting them on, she says, “I know our boxing program isn’t great, and everyone’s pushing football, but...” She swings her stubby arms, a one - two jab combo.“I love boxing.I’m not giving it up just so the football team can afford a season’s worth of baby powder.”"
+                    , "I didn’t know you boxed! That’s cool! Yeah, we’ll keep it."//0
+                    , "That’s some solid form you have there. The boxing team must be teaching well, definitely worth keeping around."//+2
+                    , "We’re only looking to build on programs, not take any down. You got lucky with the redistricting!"//+1
+                    , "Don’t worry, the boxing team isn’t on anyone’s radar. You’re definitely safe."//-1
+                );
+                break;
+            case 5:
+                TextChange("“So...” Stacy Halls clasps her hands behind her back. “Look, I don’t love everything about myself-- I wake up to a ringing in my ears every day at 8:00am, and the bell lasts too long-- anyway, but I like a lot about myself. I don’t want to be part of some state-of-the-art program if it means losing my personality. How do I know you care about the real me?” She asks earnestly. "
+                    , "I don’t know the real you, yet. But we’ll talk, and we’ll work together, to find the best solutions we can for you."//+1
+                    , "We have good funding from this redistricting. We have the resources to do whatever you want."// - 1
+                    , "You don’t. But I intend to prove myself."//0
+                    , "I’ve done my research. Strong football team, underrated boxing, working on your curriculum. We can work on all of that."//2
+                );
+                break;
+            case 6:
+                Textchange("Stacy Halls looks down, and then up, then back down bashfully. “You two have been talking to me for a while now, I gotta go soon,” she mumbles. “I guess I should, like, let you know who I’m going with.” She stands upright, takes a breath, and says, “So I want...”"
+                    , ""
+                    , ""
+                    , ""
+                    , "next"
+                );
+                break;
+            case 7:
+                if (confirm("are you positive you want to restart?"))
+                    location.reload();
                 break;
         }
     } //stacy dialog
@@ -328,67 +410,133 @@ function ChangingDialog() {
 //---------Points Function
 var selection = 0;
 function PointsFunction(question) {
-    switch (question) {
-        case 1:
-            DialogSelected(1, 0);
-            DialogSelected(2, -1); //points for question 1
-            DialogSelected(3, 0); //Response 1
-            DialogSelected(4, -1); // question 2 et cetera
-            DialogSelected(5, 0);
-            DialogSelected(6, 2);//3
-            DialogSelected(7, 0);
-            DialogSelected(8, 0);//4
-            DialogSelected(9, 0);
-            DialogSelected(10, -1);//5
-            DialogSelected(11, 0);
-            DialogSelected(12, 0);//6
-            break;
-        case 2:
-            DialogSelected(1, 0);
-            DialogSelected(2, 0);//1
-            DialogSelected(3, 0);
-            DialogSelected(4, 0);//2
-            DialogSelected(5, 0);
-            DialogSelected(6, 0);//3
-            DialogSelected(7, 0);
-            DialogSelected(8, 1);//4
-            DialogSelected(9, 0);
-            DialogSelected(10, 0);//5
-            DialogSelected(11, 0);
-            DialogSelected(12, 0);//6
+    if (character === 1) {//chad points
+        switch (question) {
+            case 1:
+                DialogSelected(1, 0);
+                DialogSelected(2, -1); //points for question 1
+                DialogSelected(3, 0); //Response 1
+                DialogSelected(4, -1); // question 2 et cetera
+                DialogSelected(5, 0);
+                DialogSelected(6, 2);//3
+                DialogSelected(7, 0);
+                DialogSelected(8, 0);//4
+                DialogSelected(9, 0);
+                DialogSelected(10, -1);//5
+                DialogSelected(11, 0);
+                DialogSelected(12, 0);//6
+                break;
+            case 2:
+                DialogSelected(1, 0);
+                DialogSelected(2, 0);//1
+                DialogSelected(3, 0);
+                DialogSelected(4, 0);//2
+                DialogSelected(5, 0);
+                DialogSelected(6, 0);//3
+                DialogSelected(7, 0);
+                DialogSelected(8, 1);//4
+                DialogSelected(9, 0);
+                DialogSelected(10, 0);//5
+                DialogSelected(11, 0);
+                DialogSelected(12, 0);//6
 
-            break;
-        case 3:
-            DialogSelected(1, 0);
-            DialogSelected(2, 1);//1
-            DialogSelected(3, 0);
-            DialogSelected(4, 1);//2
-            DialogSelected(5, 0);
-            DialogSelected(6, -1);//3
-            DialogSelected(7, 0);
-            DialogSelected(8, -1);//4
-            DialogSelected(9, 0);
-            DialogSelected(10, 1);//5
-            DialogSelected(11, 0);
-            DialogSelected(12, 0);//6
+                break;
+            case 3:
+                DialogSelected(1, 0);
+                DialogSelected(2, 1);//1
+                DialogSelected(3, 0);
+                DialogSelected(4, 1);//2
+                DialogSelected(5, 0);
+                DialogSelected(6, -1);//3
+                DialogSelected(7, 0);
+                DialogSelected(8, -1);//4
+                DialogSelected(9, 0);
+                DialogSelected(10, 1);//5
+                DialogSelected(11, 0);
+                DialogSelected(12, 0);//6
 
-            break;
-        case 4:
-            DialogSelected(1, 0);
-            DialogSelected(2, 2);//1
-            DialogSelected(3, 0);
-            DialogSelected(4, 2);//2
-            DialogSelected(5, 0);
-            DialogSelected(6, 1);//3
-            DialogSelected(7, 0);
-            DialogSelected(8, 2);//4
-            DialogSelected(9, 0);
-            DialogSelected(10, 2);//5
-            DialogSelected(11, 0);
-            DialogSelected(12, 0);//6
+                break;
+            case 4:
+                DialogSelected(1, 0);
+                DialogSelected(2, 2);//1
+                DialogSelected(3, 0);
+                DialogSelected(4, 2);//2
+                DialogSelected(5, 0);
+                DialogSelected(6, 1);//3
+                DialogSelected(7, 0);
+                DialogSelected(8, 2);//4
+                DialogSelected(9, 0);
+                DialogSelected(10, 2);//5
+                DialogSelected(11, 0);
+                DialogSelected(12, 0);//6
 
-            break;
+                break;
 
+        }
+    }
+    else if (character === 2) {//stacy points
+        switch (question) {
+            case 1:
+                DialogSelected(1, 0);
+                DialogSelected(2, -1); //points for question 1
+                DialogSelected(3, 0); //Response 1
+                DialogSelected(4, -1); // question 2 et cetera
+                DialogSelected(5, 0);
+                DialogSelected(6, -1);//3
+                DialogSelected(7, 0);
+                DialogSelected(8, 0);//4
+                DialogSelected(9, 0);
+                DialogSelected(10, 1);//5
+                DialogSelected(11, 0);
+                DialogSelected(12, 0);//6
+                break;
+            case 2:
+                DialogSelected(1, 0);
+                DialogSelected(2, 0);//1
+                DialogSelected(3, 0);
+                DialogSelected(4, 0);//2
+                DialogSelected(5, 0);
+                DialogSelected(6, 2);//3
+                DialogSelected(7, 0);
+                DialogSelected(8, 2);//4
+                DialogSelected(9, 0);
+                DialogSelected(10, -1);//5
+                DialogSelected(11, 0);
+                DialogSelected(12, 0);//6
+
+                break;
+            case 3:
+                DialogSelected(1, 0);
+                DialogSelected(2, 1);//1
+                DialogSelected(3, 0);
+                DialogSelected(4, 1);//2
+                DialogSelected(5, 0);
+                DialogSelected(6, 0);//3
+                DialogSelected(7, 0);
+                DialogSelected(8, 1);//4
+                DialogSelected(9, 0);
+                DialogSelected(10, 2);//5
+                DialogSelected(11, 0);
+                DialogSelected(12, 0);//6
+
+                break;
+            case 4:
+                DialogSelected(1, 0);
+                DialogSelected(2, 2);//1
+                DialogSelected(3, 0);
+                DialogSelected(4, 2);//2
+                DialogSelected(5, 0);
+                DialogSelected(6, 1);//3
+                DialogSelected(7, 0);
+                DialogSelected(8, -1);//4
+                DialogSelected(9, 0);
+                DialogSelected(10, 2);//5
+                DialogSelected(11, 0);
+                DialogSelected(12, 0);//6
+
+                break;
+
+        }
     }
 } //assigning points to questions
 var dialogNum, givenPoints;
@@ -438,7 +586,7 @@ angryStacy = "SchoolGirl_Angry.png";
 blushingStacy = "SchoolGirl_Blushing.png";
 heartsStacy = "SchoolGirl_Hearts.png";
 sickStacy = "SchoolGirl_Sick.png";
-defaultStacy = "SchoolGirl_Default";
+defaultStacy = "SchoolGirl_Default.png";
 
 var reactionOne, reactionTwo, reactionThree, reactionFour;
 function ReactionImage(selection,reactionOne, reactionTwo, reactionThree, reactionFour) {
