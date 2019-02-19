@@ -110,8 +110,39 @@
     justify-content: space-around;
     color: white;
     padding-top: 2em;
+    padding-bottom:2em;
     border: 2px solid white;
+    font-weight:400;
 }
+#one:hover{
+    color:aquamarine;
+}
+#two:hover {
+    color: aqua;
+}
+#three:hover {
+    color: aquamarine;
+}
+#four:hover{
+    color:aqua;
+}
+
+#one{
+    /*border-right:2px solid white;*/
+    padding-right:10px;
+}
+#two {
+    /*border-right: 2px solid white;*/
+    padding-right: 10px;
+}
+#three {
+    /*border-right: 2px solid white;*/
+    padding-right: 10px;
+}
+#four {
+    padding-right: 10px;
+}
+
 .textBox{
     grid-column:2/span 9;
     grid-row:7/ span 3;
@@ -120,6 +151,7 @@
     justify-content:center;
     padding-top:2em;
     border:2px solid white;
+    font-weight:bold;
 }
 .charPic{
     grid-column:1/ span 11;

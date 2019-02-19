@@ -271,11 +271,11 @@ function PlayerSwitch() {
         }
     }//responses
     if (clicks % 4 !== 0 && clicks % 2 !== 0) {
-        if (character === 1) {
+        if (character === 1 && nextDialog!==4) {
             document.getElementById("characterPicture").src = defaultChad;
-            if (nextDialog === 4) {
-                document.getElementById("characterPicture").src = snapChad;
-            }
+        }
+        else if (nextDialog === 4 && character===1) {
+            document.getElementById("characterPicture").src = snapChad;
         }
         else if (character === 2) {
             document.getElementById("characterPicture").src = defaultStacy;
@@ -581,6 +581,7 @@ function ChangingResponse(selection,ResponseOne,ResponseTwo,ResponseThree,Respon
             Response(ResponseFour);
             break;
     }
+
 }
 
 
@@ -628,13 +629,13 @@ var winner = 0;
 function Winner() {
     if (character === 2) {
         if (oneScore > twoScore) {
-            winner = "“Player One! Take me away!”</br>“Sorry, Player Two, ” she says, “but I’ll Halls pass.”</br?Player One WINS!";
+            winner = "“Player One! Take me away!”</br>“Sorry, Player Two, ” she says, “but I’ll Halls pass.”</br>Player One WINS!";
         }
         else if (oneScore < twoScore) {
-            winner = "“Player Two! Take me away!”</br>“Sorry, Player One, ” she says, “but I’ll Halls pass.”</br?Player Two WINS!";
+            winner = "“Player Two! Take me away!”</br>“Sorry, Player One, ” she says, “but I’ll Halls pass.”</br>Player Two WINS!";
         }
         else if (oneScore === twoScore) {
-            winner = "“Bart! I know your boss can take care of me!”</br>Bart suddenly appears from behind you.“I’ve got the professional care you need, honey.” He turns to you both and adds, “Don’t have a house, man!”</br> “Sorry, boys, ” Stacy Halls calls over her shoulder as Bart leads her away, “you just didn’t stand out from each other, like, at all.How boring; I’ll Halls pass.”</br>IT’S A TIE! SO YOu both lose.";
+            winner = "“Bart! I know your boss can take care of me!”</br>Bart suddenly appears from behind you.“I’ve got the professional care you need, honey.” He turns to you both and adds, “Don’t have a house, man!”</br> “Sorry, boys, ” Stacy Halls calls over her shoulder as Bart leads her away, “you just didn’t stand out from each other, like, at all.How boring; I’ll Halls pass.”</br>IT’S A TIE! SO YOU BOTH LOSE.";
         }
     }
     else if (character === 1) {
