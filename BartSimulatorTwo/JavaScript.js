@@ -9,6 +9,7 @@ function StartGame() {
 }
 
 
+
 //---------Player Select screen to Character Select screen
 //---------Player Selection
 
@@ -25,6 +26,7 @@ function Rules() {
     y.style.display = "flex";
     z.style.display = "flex";
 }
+
 
 
 //---------Character Select screen to Question 1 Screen
@@ -93,6 +95,7 @@ function Stacy() {
 }
 
 
+
 //---------Next Question
 var question;
 var clicks = 0;
@@ -130,6 +133,8 @@ function NextQuestion(question) {
             break;
     }
 }
+
+
 
 //---------Player switch and dialog counter and response
 var player;
@@ -211,7 +216,7 @@ function PlayerSwitch() {
             }
         }
         else if (character === 2) {
-            switch (nextDialog) {//stacy images
+            switch (nextDialog) {//stacy responses
                 case 1:
                     ReactionImage(selection,angryStacy,sickStacy,defaultStacy,heartsStacy);
                     ChangingResponse(selection
@@ -278,6 +283,8 @@ function PlayerSwitch() {
     }
 }
 
+
+
 //---------Points 
 var oneScore=0;
 var twoScore=0;
@@ -291,6 +298,8 @@ function PointGiver(points) {
         twoScore += points;
     }
 }
+
+
 
 //---------Next Dialog
 //---------Changes the dialog and text everytime a both players go
@@ -392,7 +401,7 @@ function ChangingDialog() {
                 );
                 break;
             case 6:
-                Textchange("Stacy Halls looks down, and then up, then back down bashfully. “You two have been talking to me for a while now, I gotta go soon,” she mumbles. “I guess I should, like, let you know who I’m going with.” She stands upright, takes a breath, and says, “So I want...”"
+                TextChange("Stacy Halls looks down, and then up, then back down bashfully. “You two have been talking to me for a while now, I gotta go soon,” she mumbles. “I guess I should, like, let you know who I’m going with.” She stands upright, takes a breath, and says, “So I want...”"
                     , ""
                     , ""
                     , ""
@@ -406,6 +415,8 @@ function ChangingDialog() {
         }
     } //stacy dialog
 }
+
+
 
 //---------Points Function
 var selection = 0;
@@ -547,6 +558,8 @@ function DialogSelected(dialogNum,givenPoints) {
 
 }
 
+
+
 //---------Responses
 var responseOne,responseTwo,ResponseThree,ResponseFour;
 
@@ -569,6 +582,8 @@ function ChangingResponse(selection,ResponseOne,ResponseTwo,ResponseThree,Respon
             break;
     }
 }
+
+
 
 //---------Reaction images
 var angryChad, happyChad, sadChad, snapChad, thumbChad,defaultChad;
@@ -611,23 +626,42 @@ function ReactionImage(selection,reactionOne, reactionTwo, reactionThree, reacti
 //---------Win Screen
 var winner = 0;
 function Winner() {
-    if (oneScore > twoScore) {
-        winner = "Player One! <3";
+    if (character === 2) {
+        if (oneScore > twoScore) {
+            winner = "“Player One! Take me away!”</br>“Sorry, Player Two, ” she says, “but I’ll Halls pass.”</br?Player One WINS!";
+        }
+        else if (oneScore < twoScore) {
+            winner = "“Player Two! Take me away!”</br>“Sorry, Player One, ” she says, “but I’ll Halls pass.”</br?Player Two WINS!";
+        }
+        else if (oneScore === twoScore) {
+            winner = "“Bart! I know your boss can take care of me!”</br>Bart suddenly appears from behind you.“I’ve got the professional care you need, honey.” He turns to you both and adds, “Don’t have a house, man!”</br> “Sorry, boys, ” Stacy Halls calls over her shoulder as Bart leads her away, “you just didn’t stand out from each other, like, at all.How boring; I’ll Halls pass.”</br>IT’S A TIE! SO YOu both lose.";
+        }
     }
-    else if (oneScore < twoScore) {
-        winner = "Player Two! <3";
-    }
-    else if (oneScore === twoScore) {
-        winner = "Neither of you";
+    else if (character === 1) {
+        if (oneScore > twoScore) {
+            winner = " “Player One! I’m all yours, broseph!”</br>“Sorry, Player Two, ” he mumbles, “but you just weren’t fam, you know ?”</br> Player One WINS!";
+        }
+        else if (oneScore < twoScore) {
+            winner = " “Player Two! I’m all yours, broseph!”</br>“Sorry, Player One, ” he mumbles, “but you just weren’t fam, you know ?”</br>Player Two WINS!";
+        }
+        else if (oneScore === twoScore) {
+            winner = "“Bart! I know your boss can take care of me!”</br> Bart suddenly appears from behind you.“I’ve got the professional care you need, broseph.” He turns to you both and adds, “Don’t have a house, man!”</br>“Sorry, boys, ” Colonial Chad calls over his shoulder as Bart leads him away, “you just didn’t stand out from each other, like, at all.But Bart here…”</br>IT’S A TIE! SO YOU BOTH LOSE!.";
+        }
     }
 
         TextChange(winner,"","","","Play Again?");
         var x = document.getElementById("characterPicture");
         if (character === 1) {
             x.src = "BuffHouse_Detailed.png";
+            if (oneScore === twoScore) {
+                x.src = "SkyScraperBart.png";
+            }
         }
         else if (character === 2) {
             x.src = "SchoolGirl_Detailed.png";
+            if (oneScore === twoScore) {
+                x.src = "SkyScraperBart.png";
+            }
     }
 
     document.getElementById("audio").src = "drum.ogg";
