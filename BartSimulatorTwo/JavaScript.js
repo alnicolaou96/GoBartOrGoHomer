@@ -87,7 +87,7 @@ function Stacy() {
         TextChange("*you see a cute house*", "", "", "", "Next");
         document.getElementById("characterPicture").src = "SchoolGirl_Default.png";
 
-        document.getElementById("audio").src = "hotel1.ogg";
+        document.getElementById("audio").src = "Sandrealitor.ogg";
     }
     else {
         location.reload(); //restarts the program
